@@ -20,7 +20,7 @@ TagManager:
   - planeForMousePosition
   - moveCancelWall
   - InterativeSensor
-  - 
+  - midground
   - 
   - 
   - 
@@ -45,6 +45,12 @@ TagManager:
     locked: 0
   - name: Background-close
     uniqueID: 1686384577
+    locked: 0
+  - name: Midground
+    uniqueID: 3589567785
+    locked: 0
+  - name: Midground-close
+    uniqueID: 942158609
     locked: 0
   - name: Default
     uniqueID: 0
