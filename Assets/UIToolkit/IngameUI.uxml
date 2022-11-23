@@ -1,0 +1,37 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Tookit/stylesheet.uss?fileID=7433441132597879392&amp;guid=14c7e538c367b2941894265617ce1d71&amp;type=3#stylesheet" />
+    <ui:VisualElement name="UIArea" style="justify-content: space-between; width: 100%; height: 100%;">
+        <ui:VisualElement name="TopLayout" style="flex-direction: row; width: 100%; height: 130px; justify-content: center; align-items: center;">
+            <ui:VisualElement name="Statement" style="width: 700%; align-items: center; justify-content: center; flex-direction: row; height: 130px;">
+                <ui:VisualElement name="StateArea_hungry" class="stateArea" style="flex-direction: row; height: 78px; width: 300px;">
+                    <ui:VisualElement name="Icon" class="icon" style="width: 100px; background-image: url(&apos;project://database/Assets/%23icons/hungry.png?fileID=2800000&amp;guid=d35c0ada70ab7354ba7bedd5e6e06cd3&amp;type=3#hungry&apos;);" />
+                    <ui:VisualElement name="Value" class="value" style="width: 200px; height: 100%;">
+                        <ui:SliderInt picking-mode="Ignore" label="SliderInt" value="42" high-value="100" class="gage" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="StateArea_health" class="stateArea" style="flex-direction: row; height: 78px; width: 300px;">
+                    <ui:VisualElement name="Icon" class="icon" style="width: 100px; background-image: url(&apos;project://database/Assets/%23icons/health.png?fileID=2800000&amp;guid=a08388b161e438748be263932e807bd8&amp;type=3#health&apos;);" />
+                    <ui:VisualElement name="Value" class="value" style="width: 200px; height: 100%;">
+                        <ui:SliderInt picking-mode="Ignore" value="100" high-value="100" show-input-field="false" inverted="false" direction="Horizontal" focusable="false" usage-hints="None" class="gage" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="StateArea_feeling" class="stateArea" style="flex-direction: row; height: 78px; width: 300px;">
+                    <ui:VisualElement name="Icon" class="icon" style="width: 100px; background-image: url(&apos;project://database/Assets/%23icons/feeling.png?fileID=2800000&amp;guid=b150df5a346fa2e4d8b24782378f2cba&amp;type=3#feeling&apos;);" />
+                    <ui:VisualElement name="Value" class="value" style="width: 200px; height: 100%;">
+                        <ui:SliderInt picking-mode="Ignore" label="SliderInt" value="42" high-value="100" class="gage" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Menu" style="width: 100%; height: 100%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="bottomLayout" style="flex-direction: row; align-items: auto; justify-content: space-between; width: 100%; height: 130px;">
+            <ui:VisualElement name="Bag" style="height: 100%; width: 100%;" />
+            <ui:VisualElement name="MapSelect" style="width: 30%; height: 100%; justify-content: center; align-items: center;">
+                <ui:VisualElement name="Box" style="background-color: rgb(197, 181, 181); width: 90%; height: 85%; left: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; right: 0; top: 0; flex-direction: row-reverse; justify-content: space-between; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; align-items: center;">
+                    <ui:Button text="Button" display-tooltip-when-elided="true" style="width: 96px; height: 96px; border-top-left-radius: 19px; border-bottom-left-radius: 19px; border-top-right-radius: 19px; border-bottom-right-radius: 19px; -unity-slice-right: 0; right: 5px;" />
+                    <ui:Label text="Main Map" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#Arial&apos;); color: rgb(0, 0, 0); font-size: 30px; -unity-text-align: middle-center; left: 10px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

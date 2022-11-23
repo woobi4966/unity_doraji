@@ -1,0 +1,31 @@
+.stateArea {
+    background-color: rgba(255, 255, 255, 0.21);
+    left: 0;
+    margin-right: 15px;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px;
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 19px;
+    height: 80px;
+}
+
+.icon {
+    -unity-background-scale-mode: scale-to-fit;
+    width: 75%;
+    height: 75px;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.value {
+    -unity-text-align: middle-center;
+    align-items: center;
+    justify-content: center;
+}
+
+.gage {
+    background-color: rgba(255, 40, 40, 255);
+    font-size: 15px;
+}

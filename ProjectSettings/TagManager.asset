@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CursorController
+  - InteractiveSensor
   layers:
   - Default
   - TransparentFX
@@ -11,13 +13,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - background
+  - ground
+  - foreground
+  - Character
+  - planeForMousePosition
+  - moveCancelWall
+  - InterativeSensor
   - 
   - 
   - 
@@ -38,6 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2897756897
+    locked: 0
+  - name: Background-close
+    uniqueID: 1686384577
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1952473387
+    locked: 0
+  - name: foreground-close
+    uniqueID: 2028479021
     locked: 0
