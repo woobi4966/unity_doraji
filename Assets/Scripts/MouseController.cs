@@ -65,6 +65,7 @@ public class MouseController : MonoBehaviour
     // 클릭이 끝났을 때
     private void EndedClick() {
         ClickPointPositionToObject(); // 마우스의 위치
+        
     }
 
 
