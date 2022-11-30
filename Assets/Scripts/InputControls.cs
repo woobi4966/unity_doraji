@@ -160,6 +160,34 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""StepCount"",
+            ""id"": ""38bb13ff-fadc-45ec-ae27-c347b6f44391"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Value"",
+                    ""id"": ""0fd50d4a-3c75-4eb1-b1bf-11afd3f38013"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""71148b56-c0ad-4902-ae43-27805d859fa3"",
+                    ""path"": ""<StepCounter>/stepCounter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -173,6 +201,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         m_Touch_PrimaryFingerPosition = m_Touch.FindAction("PrimaryFingerPosition", throwIfNotFound: true);
         m_Touch_SecondaryFingerPosition = m_Touch.FindAction("SecondaryFingerPosition", throwIfNotFound: true);
         m_Touch_SecondaryTouchContact = m_Touch.FindAction("SecondaryTouchContact", throwIfNotFound: true);
+        // StepCount
+        m_StepCount = asset.FindActionMap("StepCount", throwIfNotFound: true);
+        m_StepCount_Newaction = m_StepCount.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -318,6 +349,39 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         }
     }
     public TouchActions @Touch => new TouchActions(this);
+
+    // StepCount
+    private readonly InputActionMap m_StepCount;
+    private IStepCountActions m_StepCountActionsCallbackInterface;
+    private readonly InputAction m_StepCount_Newaction;
+    public struct StepCountActions
+    {
+        private @InputControls m_Wrapper;
+        public StepCountActions(@InputControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_StepCount_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_StepCount; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(StepCountActions set) { return set.Get(); }
+        public void SetCallbacks(IStepCountActions instance)
+        {
+            if (m_Wrapper.m_StepCountActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m_StepCountActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_StepCountActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_StepCountActionsCallbackInterface.OnNewaction;
+            }
+            m_Wrapper.m_StepCountActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+        }
+    }
+    public StepCountActions @StepCount => new StepCountActions(this);
     public interface IMouseActions
     {
         void OnClick(InputAction.CallbackContext context);
@@ -328,5 +392,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         void OnPrimaryFingerPosition(InputAction.CallbackContext context);
         void OnSecondaryFingerPosition(InputAction.CallbackContext context);
         void OnSecondaryTouchContact(InputAction.CallbackContext context);
+    }
+    public interface IStepCountActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }

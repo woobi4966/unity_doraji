@@ -138,6 +138,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "StepCount",
+            "id": "38bb13ff-fadc-45ec-ae27-c347b6f44391",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "0fd50d4a-3c75-4eb1-b1bf-11afd3f38013",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "71148b56-c0ad-4902-ae43-27805d859fa3",
+                    "path": "<StepCounter>/stepCounter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
